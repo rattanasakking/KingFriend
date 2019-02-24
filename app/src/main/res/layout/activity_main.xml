@@ -9,7 +9,7 @@
     <!--Wallpaper-->
     <ImageView
         android:scaleType="centerCrop"
-        android:src="@drawable/bg"
+        android:src="@drawable/bgking"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
