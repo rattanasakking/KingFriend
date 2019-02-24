@@ -158,6 +158,14 @@ public class RegisterFragment extends Fragment {
                 ftpClient.upload(file, new uploadListener());
 
 
+//                    update DataBase
+                AddUserThread addUserThread = new AddUserThread(getActivity());
+                addUserThread.execute(name,user,password,"https://www.androidthai.in.th/ksu/king"+nameImage);
+                String result = addUserThread.get();
+                if (Boolean.parseBoolean(result)) {
+                    getActivity().getSupportFragmentManager().popBackStack();
+                }
+
 
             } catch (Exception e) {
                 e.printStackTrace();
