@@ -11,6 +11,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 
 /**
@@ -54,6 +58,23 @@ public class MainFragment extends Fragment {
                         getUserWhereUserThread.execute(user);
                         String json = getUserWhereUserThread.get();
                         Log.d("24FebV1", "json ==>" + json);
+
+                        if (json.equals("null")) {
+                            myAlert.normalDialog("User False", "No User In Database");
+                        } else {
+                            JSONArray jsonArray = new JSONArray(json);
+                            JSONObject jsonObject = jsonArray.getJSONObject(0);
+
+                            if (password.equals(jsonObject.getString("Password"))) {
+                                Toast.makeText(getActivity(),"Welcome"+jsonObject.getString("Name"), Toast.LENGTH_SHORT).show();
+                            } else {
+                                myAlert.normalDialog("Password", "Passdord False");
+                            }
+
+
+                        }
+
+
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
