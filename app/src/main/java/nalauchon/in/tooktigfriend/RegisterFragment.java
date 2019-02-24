@@ -134,6 +134,8 @@ public class RegisterFragment extends Fragment {
             }
 
             Log.d("24FebV1", "path ==>" + pathImageString);
+            String nameImage = pathImageString.substring(pathImageString.lastIndexOf("/"));
+            Log.d("24FebV1", "NameImage ==>" + nameImage);
 
         }  //   if
 
