@@ -32,7 +32,7 @@ public class AddUserThread extends AsyncTask<String, Void, String> {
                     .add("Avatar", strings[3])
                     .build();
             Request.Builder builder = new Request.Builder();
-            Request request = builder.url("").post(requestBody).build();
+            Request request = builder.url("http://www.androidthai.in.th/ksu/addUserKing.php").post(requestBody).build();
             Response response = okHttpClient.newCall(request).execute();
 
         } catch (Exception e) {
